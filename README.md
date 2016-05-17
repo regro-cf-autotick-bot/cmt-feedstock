@@ -5,7 +5,7 @@ Home: https://github.com/lucastheis/cmt
 
 Package license: MIT
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Fast implementations of several probabilistic models.
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/cmt-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/cmt-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/cmt-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/cmt-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/cmt-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/cmt-feedstock/branch/master)
