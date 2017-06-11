@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export CC="gcc"
+export CXX="g++"
+
 pushd code/liblbfgs
 ./autogen.sh
 ./configure --enable-sse2
