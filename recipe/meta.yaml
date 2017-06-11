@@ -9,10 +9,6 @@ source:
   url: https://github.com/lucastheis/cmt/archive/v{{ version }}.tar.gz
   sha256: 252d1029c62889a533d50e017445407e1de653cac8bee48ecdc34e4d8fd6e7ce
   patches:
-    # Workaround to ensure `gcc` compiler is used on Mac.
-    # See issue ( https://github.com/lucastheis/cmt/issues/10 ).
-    # No patch submitted as this will require discussion with the developer.
-    - setup.py.patch
     # Incorrect import here makes tests fail and reduces functionality.
     # See issue ( https://github.com/lucastheis/cmt/issues/14 ).
     # Patch for this has been submitted.
