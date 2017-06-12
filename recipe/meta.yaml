@@ -1,4 +1,4 @@
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: cmt
@@ -7,17 +7,18 @@ package:
 source:
   fn: cmt-v{{ version }}.tar.gz
   url: https://github.com/lucastheis/cmt/archive/v{{ version }}.tar.gz
-  sha1: 7482caefa5359a351ac834920a092b5594098d70
+  sha256: 252d1029c62889a533d50e017445407e1de653cac8bee48ecdc34e4d8fd6e7ce
   patches:
-    # Workaround to ensure `gcc` compiler is used on Mac.
-    # See issue ( https://github.com/lucastheis/cmt/issues/10 ).
-    # No patch submitted as this will require discussion with the developer.
-    - setup.py.patch
-    # Incorrect import here makes tests fail and reduces functionality.
-    # See issue ( https://github.com/lucastheis/cmt/issues/14 ).
+    # Patch to avoid passing `-stdlib` to the compiler generally
+    # See issue ( https://github.com/lucastheis/cmt/issues/25 ).
     # Patch for this has been submitted.
-    # See pull request ( https://github.com/lucastheis/cmt/pull/18 ).
-    - images.py.patch
+    # See pull request ( https://github.com/lucastheis/cmt/pull/27 ).
+    - setup.py.patch
+    # Patch to register missing Python method added in 0.6.0.
+    # See issue ( https://github.com/lucastheis/cmt/issues/29 ).
+    # Patch for this has been submitted.
+    # See pull request ( https://github.com/lucastheis/cmt/pull/30 ).
+    - module.cpp.patch
     # Test failure here is caused due to an inability to pickle.
     # See issue ( https://github.com/lucastheis/cmt/issues/12 ).
     # Patch for this has been submitted.
@@ -35,7 +36,7 @@ source:
     - univariate_test.py.patch
 
 build:
-  number: 1
+  number: 0
   skip: true      # [win or py3k or np>111]
 
 requirements:
@@ -74,6 +75,7 @@ test:
     - python code/cmt/python/tests/mcgsm_test.py
     - python code/cmt/python/tests/mixture_test.py
     - python code/cmt/python/tests/mlr_test.py
+    - python code/cmt/python/tests/mogsm_test.py
     - python code/cmt/python/tests/nonlinear_test.py
     - python code/cmt/python/tests/preconditioner_test.py
     - python code/cmt/python/tests/speed.py
@@ -88,6 +90,7 @@ test:
 about:
   home: https://github.com/lucastheis/cmt
   license: MIT
+  license_file: LICENSE
   summary: Fast implementations of several probabilistic models.
 
 extra:
