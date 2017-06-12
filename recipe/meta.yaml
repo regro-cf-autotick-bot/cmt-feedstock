@@ -75,6 +75,7 @@ test:
     - python code/cmt/python/tests/mcgsm_test.py
     - python code/cmt/python/tests/mixture_test.py
     - python code/cmt/python/tests/mlr_test.py
+    - python code/cmt/python/tests/mogsm_test.py
     - python code/cmt/python/tests/nonlinear_test.py
     - python code/cmt/python/tests/preconditioner_test.py
     - python code/cmt/python/tests/speed.py
