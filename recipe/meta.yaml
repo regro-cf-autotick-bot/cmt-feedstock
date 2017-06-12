@@ -14,6 +14,11 @@ source:
     # Patch for this has been submitted.
     # See pull request ( https://github.com/lucastheis/cmt/pull/27 ).
     - setup.py.patch
+    # Patch to register missing Python method added in 0.6.0.
+    # See issue ( https://github.com/lucastheis/cmt/issues/29 ).
+    # Patch for this has been submitted.
+    # See pull request ( https://github.com/lucastheis/cmt/pull/30 ).
+    - module.cpp.patch
     # Test failure here is caused due to an inability to pickle.
     # See issue ( https://github.com/lucastheis/cmt/issues/12 ).
     # Patch for this has been submitted.
